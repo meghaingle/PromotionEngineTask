@@ -18,14 +18,16 @@ namespace PromotionEngineTask
             {
                 Console.WriteLine("Please enter the type of product:A,B,C or D");
                 string type = Console.ReadLine();
-                Product p = new Product(type);
-                products.Add(p);
+                Product product = new Product(type);
+                products.Add(product);
             }
+            int totalPrice = GetTotalPrice(products);
+            Console.WriteLine(totalPrice);
+            Console.ReadLine();
         }
 
         public class Product
         {
-
             public string Id { get; set; }
             public decimal Price { get; set; }
             public Product(string id)
@@ -63,8 +65,30 @@ namespace PromotionEngineTask
             int priceofC = 20;
             int CounterofD = 0;
             int priceofD = 15;
-            int totalPriceofA = counterofA + priceofA;
-            return totalPriceofA;
+            foreach (Product pr in products)
+            {
+                if (pr.Id == "A" || pr.Id == "a")
+                {
+                    counterofA = counterofA + 1;
+                }
+                if (pr.Id == "B" || pr.Id == "b")
+                {
+                    counterofB = counterofB + 1;
+                }
+                if (pr.Id == "C" || pr.Id == "c")
+                {
+                    CounterofC = CounterofC + 1;
+                }
+                if (pr.Id == "D" || pr.Id == "d")
+                {
+                    CounterofD = CounterofD + 1;
+                }
+            }
+            int totalPriceofA = (counterofA / 3) * 130 + (counterofA % 3 * priceofA);
+            int totalPriceofB = (counterofB / 2) * 45 + (counterofB % 2 * priceofB);
+            int totalPriceofC = (CounterofC * priceofC);
+            int totalPriceofD = (CounterofD * priceofD);
+            return totalPriceofA + totalPriceofB + totalPriceofC + totalPriceofD;
         }
-        }
+    }
 }

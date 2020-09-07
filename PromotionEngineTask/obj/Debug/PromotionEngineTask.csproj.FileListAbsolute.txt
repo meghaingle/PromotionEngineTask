@@ -1,0 +1,7 @@
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTask\obj\Debug\PromotionEngineTask.csprojAssemblyReference.cache
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTask\obj\Debug\PromotionEngineTask.csproj.CoreCompileInputs.cache
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTask\bin\Debug\PromotionEngineTask.exe.config
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTask\bin\Debug\PromotionEngineTask.exe
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTask\bin\Debug\PromotionEngineTask.pdb
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTask\obj\Debug\PromotionEngineTask.exe
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTask\obj\Debug\PromotionEngineTask.pdb
