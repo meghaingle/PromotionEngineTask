@@ -6,54 +6,66 @@ using System.Threading.Tasks;
 
 namespace PromotionEngineTask
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
-        {
-            //create list of promotions
-            //we need to add information about Product's count
-            Dictionary<String, int> d1 = new Dictionary<String, int>();
-            d1.Add("A", 3);
-            Dictionary<String, int> d2 = new Dictionary<String, int>();
-            d2.Add("B", 2);
-            Dictionary<String, int> d3 = new Dictionary<String, int>();
-            d3.Add("C", 1);
-            d3.Add("D", 1);
+        {          
 
-            List<Promotion> promotions = new List<Promotion>()
+            TestPromotion obj= new TestPromotion();
+            obj.TestPromotionEngine();
+        }
+
+        public class TestPromotion
+        {
+
+            public void TestPromotionEngine()
+            {
+                //create list of promotions
+                //we need to add information about Product's count
+                Dictionary<String, int> d1 = new Dictionary<String, int>();
+                d1.Add("A", 3);
+                Dictionary<String, int> d2 = new Dictionary<String, int>();
+                d2.Add("B", 2);
+                Dictionary<String, int> d3 = new Dictionary<String, int>();
+                d3.Add("C", 1);
+                d3.Add("D", 1);
+
+                List<Promotion> promotions = new List<Promotion>()
              {
-           
+
                   new Promotion(1, d1, 130),
-       
+
                   new Promotion(2, d2, 45),
-       
+
                    new Promotion(3, d3, 30),
 
              };
 
-            List<Order> orders = new List<Order>();
+                List<Order> orders = new List<Order>();
 
 
-            Order order1 = new Order(1, new List<Product>() { new Product("A"), new Product("B"), new Product("C") });
-            Order order2 = new Order(2, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("C") });
-            Order order3 = new Order(3, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("D") });
+                Order order1 = new Order(1, new List<Product>() { new Product("A"), new Product("B"), new Product("C") });
+                Order order2 = new Order(2, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("C") });
+                Order order3 = new Order(3, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("D") });
 
-            orders.AddRange(new Order[] { order1, order2, order3 });
+                orders.AddRange(new Order[] { order1, order2, order3
+        });
 
-            //check if order meets promotion
-            foreach (Order ord in orders)
-            {
-                List<decimal> promoprices = promotions
-                    .Select(promo => PromotionChecker.GetTotalPrice(ord, promo))
-                    .ToList();
-                decimal origprice = ord.Products.Sum(x => x.Price);
-                decimal promoprice = promoprices.Sum();
-                Console.WriteLine($"OrderID: {ord.OrderID} => Original price: {origprice.ToString("0.00")} | Promotion Price: {promoprice.ToString("0.00")} | Total price: {(origprice - promoprice).ToString("0.00")}");
+                //check if order meets promotion
+                foreach (Order ord in orders)
+                {
+                    List<decimal> promoprices = promotions
+                        .Select(promo => PromotionChecker.GetTotalPrice(ord, promo))
+                        .ToList();
+                    decimal origprice = ord.Products.Sum(x => x.Price);
+                    decimal promoprice = promoprices.Sum();
+                    Console.WriteLine($"OrderID: {ord.OrderID} => Original price: {origprice.ToString("0.00")} | Promotion Price: {promoprice.ToString("0.00")} | Total price: {(origprice - promoprice).ToString("0.00")}");
+                }
+
+                Console.ReadLine();
             }
 
-            Console.ReadLine();
         }
-
         public class Product
         {
             public string Id { get; set; }
