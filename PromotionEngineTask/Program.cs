@@ -18,11 +18,11 @@ namespace PromotionEngineTask
             {
                 Console.WriteLine("Please enter the type of product:A,B,C or D");
                 string type = Console.ReadLine();
-                Product product = new Product(type);
-                products.Add(product);
+                //Product product = new Product(type);
+               // products.Add(product);
             }
-            int totalPrice = GetTotalPrice(products);
-            Console.WriteLine(totalPrice);
+          // int totalPrice = GetTotalPrice(products);
+          //  Console.WriteLine(totalPrice);
             Console.ReadLine();
         }
 
@@ -30,65 +30,78 @@ namespace PromotionEngineTask
         {
             public string Id { get; set; }
             public decimal Price { get; set; }
-            public Product(string id)
+        }
+
+        public interface IProductService
+        {
+            void GetPriceByType(Product product);
+            int GetTotalPrice(List<Product> products);
+        }
+
+        public class ProductService : IProductService
+        {
+            public void GetPriceByType(Product product)
             {
-                this.Id = id;
-                switch (id)
+                switch (product.Id)
                 {
                     case "A":
-                        this.Price = 50m;
+                        product.Price = 50m;
 
                         break;
                     case "B":
-                        this.Price = 30m;
+                        product.Price = 30m;
 
                         break;
                     case "C":
-                        this.Price = 20m;
+                        product.Price = 20m;
 
                         break;
                     case "D":
-                        this.Price = 2015m;
+                        product.Price = 2015m;
                         break;
                 }
             }
 
+            public int GetTotalPrice(List<Product> products)
+            {
+                int counterOfA = 0;
+                int priceOfA = 50;
+                int counterOfB = 0;
+                int priceOfB = 30;
+                int counterOfC = 0;
+                int priceOfC = 20;
+                int counterOfD = 0;
+                int priceOfD = 15;
+
+                foreach (Product pr in products)
+                {
+                    switch (pr.Id)
+                    {
+                        case "A":
+                        case "a":
+                            counterOfA += 1;
+                            break;
+                        case "B":
+                        case "b":
+                            counterOfB += 1;
+                            break;
+                        case "C":
+                        case "c":
+                            counterOfC += 1;
+                            break;
+                        case "D":
+                        case "d":
+                            counterOfD += 1;
+                            break;
+                    }
+                }
+                int totalPriceOfA = (counterOfA / 3) * 130 + (counterOfA % 3 * priceOfA);
+                int totalPriceOfB = (counterOfB / 2) * 45 + (counterOfB % 2 * priceOfB);
+                int totalPriceOfC = (counterOfC * priceOfC);
+                int totalPriceOfD = (counterOfD * priceOfD);
+                return totalPriceOfA + totalPriceOfB + totalPriceOfC + totalPriceOfD;
+            }
         }
 
-        private static int GetTotalPrice(List<Product> products)
-        {
-            int counterofA = 0;
-            int priceofA = 50;
-            int counterofB = 0;
-            int priceofB = 30;
-            int CounterofC = 0;
-            int priceofC = 20;
-            int CounterofD = 0;
-            int priceofD = 15;
-            foreach (Product pr in products)
-            {
-                if (pr.Id == "A" || pr.Id == "a")
-                {
-                    counterofA = counterofA + 1;
-                }
-                if (pr.Id == "B" || pr.Id == "b")
-                {
-                    counterofB = counterofB + 1;
-                }
-                if (pr.Id == "C" || pr.Id == "c")
-                {
-                    CounterofC = CounterofC + 1;
-                }
-                if (pr.Id == "D" || pr.Id == "d")
-                {
-                    CounterofD = CounterofD + 1;
-                }
-            }
-            int totalPriceofA = (counterofA / 3) * 130 + (counterofA % 3 * priceofA);
-            int totalPriceofB = (counterofB / 2) * 45 + (counterofB % 2 * priceofB);
-            int totalPriceofC = (CounterofC * priceofC);
-            int totalPriceofD = (CounterofD * priceofD);
-            return totalPriceofA + totalPriceofB + totalPriceofC + totalPriceofD;
-        }
     }
 }
