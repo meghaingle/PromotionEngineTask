@@ -18,7 +18,6 @@ namespace PromotionEngineTask
             while (!int.TryParse(Console.ReadLine(), out orderNo))
             {
                 Console.WriteLine("Please Enter a valid numerical value!");
-                Console.WriteLine("Please Enter an ID number to search for:");
             }
 
             ProductService productService = new ProductService();
