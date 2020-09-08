@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PromotionEngineTaskTest;
 using static PromotionEngineTask.Program;
 
 namespace PromotionEngineTaskTest

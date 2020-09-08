@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PromotionEngineTask
 {
@@ -17,7 +15,6 @@ namespace PromotionEngineTask
 
         public class TestPromotion
         {
-
             public void TestPromotionEngine()
             {
                 //create list of promotions
