@@ -114,5 +114,19 @@ namespace PromotionEngineTask
             }
         }
 
+        public class Promotion
+        {
+            public int PromotionID { get; set; }
+            public Dictionary<string, int> ProductInfo { get; set; }
+            public decimal PromoPrice { get; set; }
+
+            public Promotion(int promID, Dictionary<string, int> prodInfo, decimal pprice)
+            {
+                this.PromotionID = promID;
+                this.ProductInfo = prodInfo;
+                this.PromoPrice = pprice;
+            }
+        }
+
     }
 }
