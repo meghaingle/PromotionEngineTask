@@ -27,15 +27,29 @@ namespace PromotionEngineTask
        
                   new Promotion(2, d2, 45),
        
-                   new Promotion(3, d3, 30)
+                   new Promotion(3, d3, 30),
+
              };
 
             List<Order> orders = new List<Order>();
 
-            Order order1 = new Order(1, new List<Product>() { new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("C"), new Product("D") });
-            Order order2 = new Order(2, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("B") });
-            Order order3 = new Order(3, new List<Product>() { new Product("A"), new Product("A"), new Product("D"), new Product("B"), new Product("B") });
+
+            Order order1 = new Order(1, new List<Product>() { new Product("A"), new Product("B"), new Product("C") });
+            Order order2 = new Order(2, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("C") });
+            Order order3 = new Order(3, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("D") });
+
             orders.AddRange(new Order[] { order1, order2, order3 });
+
+            //check if order meets promotion
+            foreach (Order ord in orders)
+            {
+                List<decimal> promoprices = promotions
+                    .Select(promo => PromotionChecker.GetTotalPrice(ord, promo))
+                    .ToList();
+                decimal origprice = ord.Products.Sum(x => x.Price);
+                decimal promoprice = promoprices.Sum();
+                Console.WriteLine($"OrderID: {ord.OrderID} => Original price: {origprice.ToString("0.00")} | Promotion Price: {promoprice.ToString("0.00")} | Total price: {(origprice - promoprice).ToString("0.00")}");
+            }
 
             Console.ReadLine();
         }
