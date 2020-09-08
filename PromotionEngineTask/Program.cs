@@ -128,5 +128,18 @@ namespace PromotionEngineTask
             }
         }
 
+        public class Order
+        {
+            public int OrderID { get; set; }
+            public List<Product> Products { get; set; }
+
+            public Order(int oid, List<Product> prods)
+            {
+                this.OrderID = oid;
+                this.Products = prods;
+            }
+        }
+
+
     }
 }
