@@ -13,9 +13,16 @@ namespace PromotionEngineTask
             List<Product> products = new List<Product>();
 
             Console.WriteLine("Please enter total number of order:");
-            int Orderno = Convert.ToInt32(Console.ReadLine());
+            int orderNo = 0;
+
+            while (!int.TryParse(Console.ReadLine(), out orderNo))
+            {
+                Console.WriteLine("Please Enter a valid numerical value!");
+                Console.WriteLine("Please Enter an ID number to search for:");
+            }
+
             ProductService productService = new ProductService();
-            for (int i = 0; i < Orderno; i++)
+            for (int i = 0; i < orderNo; i++)
             {
                 Console.WriteLine("Please enter the type of product:A,B,C or D");
                 string type = Console.ReadLine();
