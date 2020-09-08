@@ -46,7 +46,7 @@ namespace PromotionEngineTask
                 Order order3 = new Order(3, new List<Product>() { new Product("A"), new Product("A"), new Product("A"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("B"), new Product("D") });
 
                 orders.AddRange(new Order[] { order1, order2, order3
-        });
+             });
 
                 //check if order meets promotion
                 foreach (Order ord in orders)
@@ -63,6 +63,7 @@ namespace PromotionEngineTask
             }
 
         }
+
         public class Product
         {
             public string Id { get; set; }
@@ -138,7 +139,6 @@ namespace PromotionEngineTask
                 }
                 return d;
             }
-
         }
     }
 }
