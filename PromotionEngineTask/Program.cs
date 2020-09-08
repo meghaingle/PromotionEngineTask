@@ -14,15 +14,20 @@ namespace PromotionEngineTask
 
             Console.WriteLine("Please enter total number of order:");
             int Orderno = Convert.ToInt32(Console.ReadLine());
+            ProductService productService = new ProductService();
             for (int i = 0; i < Orderno; i++)
             {
                 Console.WriteLine("Please enter the type of product:A,B,C or D");
                 string type = Console.ReadLine();
-                //Product product = new Product(type);
-               // products.Add(product);
+                Product product = new Product();
+                product.Id = type;
+                
+
+                productService.GetPriceByType(product);
+                products.Add(product);
             }
-          // int totalPrice = GetTotalPrice(products);
-          //  Console.WriteLine(totalPrice);
+             int totalPrice = productService.GetTotalPrice(products);
+             Console.WriteLine(totalPrice);
             Console.ReadLine();
         }
 
