@@ -1,0 +1,17 @@
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\PromotionEngineTaskTest.dll
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\PromotionEngineTaskTest.pdb
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\PromotionEngineTask.exe
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\PromotionEngineTask.pdb
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\bin\Debug\PromotionEngineTask.exe.config
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\obj\Debug\PromotionEngineTaskTest.csprojAssemblyReference.cache
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\obj\Debug\PromotionEngineTaskTest.csproj.CoreCompileInputs.cache
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\obj\Debug\PromotionEngineTaskTest.csproj.CopyComplete
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\obj\Debug\PromotionEngineTaskTest.dll
+E:\MeghaStudy\PromotionEngineTask\PromotionEngineTaskTest\obj\Debug\PromotionEngineTaskTest.pdb
